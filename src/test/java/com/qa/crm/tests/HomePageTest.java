@@ -9,9 +9,12 @@ import com.qa.crm.base.Base;
 import com.qa.crm.pages.HomePage;
 import com.qa.crm.pages.LoginPage;
 import com.qa.crm.util.UtilData;
+/*
+@Listeners(com.qa.crm.util.TestListener.class)
+*/
+
 
 public class HomePageTest extends Base {
-
 	LoginPage lgnPge;
 	HomePage hmePge;
 	

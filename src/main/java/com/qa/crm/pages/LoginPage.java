@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.qa.crm.base.Base;
 
 public class LoginPage extends Base{
@@ -23,29 +22,14 @@ public class LoginPage extends Base{
 	}
 	
 	public HomePage login(String uname,String pwd){
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		wait.until(ExpectedConditions.visibilityOf(usrname));
+		//UtilData.flash(lgnBtn, driver);
+		//UtilData.drawBorder(lgnBtn, driver);
+		
+		//wait.until(ExpectedConditions.visibilityOf(usrname));
 		usrname.sendKeys(uname);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//wait.until(ExpectedConditions.visibilityOf(pwrd));
 		pwrd.sendKeys(pwd);
-		try {
-			Thread.sleep(3000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		wait.until(ExpectedConditions.elementToBeClickable(lgnBtn));
-		//lgnBtn.click();
+		//wait.until(ExpectedConditions.elementToBeClickable(lgnBtn));
 		action.moveToElement(lgnBtn).build().perform();
 		action.click().build().perform();
 		return new HomePage();
