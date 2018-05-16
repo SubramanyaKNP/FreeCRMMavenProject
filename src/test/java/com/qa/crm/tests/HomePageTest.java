@@ -37,7 +37,7 @@ public class HomePageTest extends Base {
 		Assert.assertEquals("User: Naveen K",homePageUsername);
 	}
 
-	@Test(priority=2)
+	@Test(priority=2,retryAnalyzer=com.qa.crm.TestNGListeners.RetryAnalyzer.class)
 	public void clickOnContacts(){
 		hmePge.clickOnContactsLink();
 	}

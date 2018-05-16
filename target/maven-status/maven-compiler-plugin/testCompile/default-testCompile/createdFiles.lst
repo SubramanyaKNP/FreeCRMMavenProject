@@ -1,0 +1,5 @@
+com\qa\crm\tests\LoginPageTests.class
+com\qa\crm\tests\RetryTestRunner.class
+com\qa\crm\tests\BrokenLinks.class
+com\qa\crm\tests\Frames.class
+com\qa\crm\tests\HomePageTest.class

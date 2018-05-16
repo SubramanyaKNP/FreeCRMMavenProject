@@ -75,4 +75,12 @@ public class UtilData extends Base{
 		JavascriptExecutor js=(JavascriptExecutor)driver;
 		js.executeScript("arguments[0].style.border='6px solid red'", element);
 	}
+	
+	public static WebElement findElementUsingID_JS(String ID){
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		WebElement element=null;
+		element = (WebElement) js.executeScript("return document.getElementById("+ID+")",element);
+		return element;
+	}
+	
 }

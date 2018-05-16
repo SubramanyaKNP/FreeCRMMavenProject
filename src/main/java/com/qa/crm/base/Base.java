@@ -22,6 +22,7 @@ public class Base {
 	public static Properties prop;
 	public static WebDriverWait wait;
 	public static Actions action;
+	
 	public Base(){
 		FileInputStream fp;
 		prop = new Properties();
@@ -36,7 +37,7 @@ public class Base {
 	public void initalization(){
 		
 		if(prop.getProperty("browser").equals("chrome")){
-			System.setProperty("webdriver.chrome.driver", "E:\\chromedriver_win32_new\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "E:\\ChromeDriver_2.38\\chromedriver.exe");
 			driver=new ChromeDriver();	
 		}
 		else if(prop.getProperty("browser").equals("firefox")){

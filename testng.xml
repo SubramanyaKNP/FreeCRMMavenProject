@@ -2,13 +2,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Free CRM Automation Testing Suite" verbose="1" >
   <listeners>
-  <!-- <listener class-name="com.qa.crm.util.TestListener"> </listener> -->
-  <listener class-name="com.qa.crm.extentreportlistener.ExtentReportListener"> </listener> 
+  <!-- <listener class-name="com.qa.crm.TestNGListeners.TestListener"> </listener> -->
+  <listener class-name="com.qa.crm.extentreportlistener.ExtentReportListener"> </listener>
+  <listener class-name="com.qa.crm.TestNGListeners.MyTransformAnnotations"> </listener> 
   </listeners>
   <test name="Smoke Testing" >
     <classes>
       <class name="com.qa.crm.tests.HomePageTest" />
       <class name="com.qa.crm.tests.LoginPageTests" />
+      <!-- <class name="com.qa.crm.tests.RetryTestRunner" /> -->
     </classes>
  </test>
 </suite>

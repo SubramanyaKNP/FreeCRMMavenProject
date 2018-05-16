@@ -7,10 +7,11 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.qa.crm.base.Base;
-import com.qa.crm.pages.HomePage;
-import com.qa.crm.pages.LoginPage;
+import com.qa.crm.pages.*;
 
-@Listeners(com.qa.crm.util.TestListener.class)
+
+
+@Listeners(com.qa.crm.TestNGListeners.TestListener.class)
 
 public class LoginPageTests extends Base{
 

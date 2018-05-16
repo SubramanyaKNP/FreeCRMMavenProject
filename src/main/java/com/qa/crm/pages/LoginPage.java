@@ -4,7 +4,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import com.qa.crm.base.Base;
+
+import com.qa.crm.base.*;
 
 public class LoginPage extends Base{
 
@@ -24,12 +25,13 @@ public class LoginPage extends Base{
 	public HomePage login(String uname,String pwd){
 		//UtilData.flash(lgnBtn, driver);
 		//UtilData.drawBorder(lgnBtn, driver);
-		
-		//wait.until(ExpectedConditions.visibilityOf(usrname));
+		System.out.println("Username is "+uname);
+		System.out.println("Pssword is "+pwd);
+		wait.until(ExpectedConditions.visibilityOf(usrname));
 		usrname.sendKeys(uname);
-		//wait.until(ExpectedConditions.visibilityOf(pwrd));
+		wait.until(ExpectedConditions.visibilityOf(pwrd));
 		pwrd.sendKeys(pwd);
-		//wait.until(ExpectedConditions.elementToBeClickable(lgnBtn));
+		wait.until(ExpectedConditions.elementToBeClickable(lgnBtn));
 		action.moveToElement(lgnBtn).build().perform();
 		action.click().build().perform();
 		return new HomePage();

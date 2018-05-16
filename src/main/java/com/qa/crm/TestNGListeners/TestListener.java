@@ -1,8 +1,11 @@
-package com.qa.crm.util;
+package com.qa.crm.TestNGListeners;
 
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import com.qa.crm.util.UtilData;
+
 
 public class TestListener implements ITestListener{
 
