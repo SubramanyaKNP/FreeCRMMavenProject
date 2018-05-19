@@ -14,7 +14,7 @@ public class HomePage extends Base{
 	WebElement contactsLink;
 	
 	
-	@FindBy(linkText="Deals")
+	@FindBy(xpath="//a[text()='Deals']")
 	WebElement dealsLink;
 	
 	

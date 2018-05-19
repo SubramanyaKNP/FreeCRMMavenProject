@@ -83,4 +83,14 @@ public class UtilData extends Base{
 		return element;
 	}
 	
+	public static void clickElement_JS(WebElement element){
+		JavascriptExecutor js=(JavascriptExecutor)driver;
+		js.executeScript("arguments[0].click()",element);
+	}
+	
+	public static void ClickOnRadioByAttribute(){
+		
+	}
+	
+	
 }

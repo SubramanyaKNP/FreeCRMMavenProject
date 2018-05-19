@@ -1,6 +1,7 @@
 package com.qa.crm.base;
 
 import java.io.FileInputStream;
+import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -9,6 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.crm.util.UtilData;
@@ -21,6 +24,7 @@ public class Base {
 	public static WebdriverEventListener eventListener;
 	public static Properties prop;
 	public static WebDriverWait wait;
+	public static Wait<WebDriver> wait2;
 	public static Actions action;
 	
 	public Base(){
@@ -53,6 +57,8 @@ public class Base {
 		driver.manage().timeouts().pageLoadTimeout(UtilData.PAGELOAD_TIMEOUT,TimeUnit.SECONDS);
 		driver.manage().timeouts().implicitlyWait(UtilData.IMPLICIT_TIMEOUT,TimeUnit.SECONDS);
 		wait = new WebDriverWait(driver, UtilData.WEBDRIVERWAIT_TIMEOUT);
+		wait2=new FluentWait<WebDriver>(driver).withTimeout(20, TimeUnit.SECONDS).
+				pollingEvery(5, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
 		action=new Actions(driver);
 		driver.get(prop.getProperty("url"));
 		try {
